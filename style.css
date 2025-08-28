@@ -1,0 +1,108 @@
+:root {
+  --bg: #ffffff;
+  --text: #222;
+  --primary: #111;
+  --accent: #e67e22;
+}
+
+[data-theme="dark"] {
+  --bg: #111;
+  --text: #f5f5f5;
+  --primary: #fff;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Navbar */
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg);
+  transition: background 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+header.scrolled { background: rgba(0,0,0,0.85); color: #fff; }
+header .logo {display: flex; align-items: center; gap: 10px;}
+header nav ul {display: flex; gap: 1.5rem; list-style: none;}
+header nav a {color: var(--text); text-decoration: none; font-weight: bold;}
+#theme-toggle {cursor: pointer; border: none; background: none; font-size: 1.2rem;}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3rem 2rem;
+  align-items: center;
+}
+.hero-text h1 {font-size: 2.5rem; margin-bottom: 1rem;}
+.hero-text .btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.hero-text .btn:hover {opacity: 0.8;}
+
+/* Products */
+.product-section {padding: 3rem 2rem;}
+.product-section h2 {margin-bottom: 1.5rem;}
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.product {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.product:hover {transform: scale(1.05);}
+.product img {width: 100%; border-radius: 10px;}
+
+/* Fade-in */
+.fade-in {opacity: 0; transform: translateY(20px); transition: all 0.8s;}
+.fade-in.show {opacity: 1; transform: translateY(0);}
+
+/* Contact */
+footer {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+footer form {
+  margin: 1rem auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer input, footer textarea {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+}
+footer button {
+  background: var(--accent);
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
